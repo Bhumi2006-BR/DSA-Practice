@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class BDayCackCandles {
+
+    public static int birthdayCakeCandles(List<Integer> candles) {
+
+        int max = Collections.max(candles);
+        int count = 0;
+
+        for (Integer candle : candles) {
+            if (candle == max) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of candles: ");
+        int n = sc.nextInt();
+
+        List<Integer> candles = new ArrayList<>();
+
+        System.out.println("Enter candle heights:");
+
+        for (int i = 0; i < n; i++) {
+            candles.add(sc.nextInt());
+        }
+
+        int result = birthdayCakeCandles(candles);
+
+        System.out.println("Number of tallest candles: " + result);
+
+        sc.close();
+    }
+}
